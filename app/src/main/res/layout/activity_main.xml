@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <Button
+        android:id="@+id/starterButton"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="32dp"
+        android:backgroundTint="#933052"
+        android:text="@string/starters"
+        app:layout_constraintBottom_toTopOf="@+id/mainButton"
+        app:layout_constraintEnd_toEndOf="@+id/mainButton"
+        app:layout_constraintStart_toStartOf="@+id/mainButton" />
+
+    <Button
+        android:id="@+id/mainButton"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:backgroundTint="#933052"
+        android:text="@string/main"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.485" />
+
+    <Button
+        android:id="@+id/finishButton"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="24dp"
+        android:backgroundTint="#933052"
+        android:text="@string/finish"
+        app:layout_constraintStart_toStartOf="@+id/mainButton"
+        app:layout_constraintTop_toBottomOf="@+id/mainButton" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="141dp"
+        android:layout_height="117dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/finishButton"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@drawable/images" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="299dp"
+        android:layout_height="221dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.028"
+        app:srcCompat="@drawable/istockphoto_1141437146_612x612" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="173dp"
+        android:layout_height="81dp"
+        android:layout_marginStart="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.147"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.904"
+        app:srcCompat="@drawable/le_guide_michelin_201_3f4fb743d283e8c285b5b17f15d59348" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
