@@ -2,6 +2,15 @@ package com.example.androiderestaurant
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
+import com.example.androiderestaurant.databinding.ActivityDetailsBinding
+import com.example.androiderestaurant.network.CartContainer
+import com.example.androiderestaurant.network.CartObject
+import com.example.androiderestaurant.network.Plate
+import com.google.gson.Gson
+import com.google.gson.GsonBuilder
+import com.squareup.picasso.Picasso
+import java.io.File
 
 class DetailsActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDetailsBinding

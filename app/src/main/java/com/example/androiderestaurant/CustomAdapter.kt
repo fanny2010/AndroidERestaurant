@@ -5,10 +5,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.example.androiderestaurant.databinding.CellCustomBinding
+import com.example.androiderestaurant.network.Plate
+import com.squareup.picasso.Picasso
 import kotlin.math.log
 
 class CustomAdapter(val items: List<String>, val clickListener: (Int) -> Unit): RecyclerView.Adapter<CustomAdapter.CellViewHolder>() {
@@ -42,7 +45,7 @@ class CustomAdapter(val items: List<String>, val clickListener: (Int) -> Unit): 
     {
         if(filter != null)
         {
-            items=filter.items
+            this.items =filter.items
         }
         notifyDataSetChanged()
     }

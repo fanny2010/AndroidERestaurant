@@ -11,6 +11,7 @@ import com.android.volley.toolbox.Volley
 import com.example.androiderestaurant.databinding.ActivityMenuListBinding
 import com.example.androiderestaurant.network.MenuResult
 import com.example.androiderestaurant.network.NetworkConstants
+import com.example.androiderestaurant.network.Plate
 import com.google.gson.GsonBuilder
 import org.json.JSONObject
 
