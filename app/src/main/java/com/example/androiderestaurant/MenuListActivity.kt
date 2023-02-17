@@ -23,6 +23,7 @@ class MenuListActivity : AppCompatActivity() {
 
     lateinit var binding: ActivityMenuListBinding
     lateinit var currentCategory: Category
+    private lateinit var adapter: CustomAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,9 +33,14 @@ class MenuListActivity : AppCompatActivity() {
         val category = intent.getSerializableExtra(extraKey) as? Category
         currentCategory = category ?: Category.STARTER
         supportActionBar?.title = categoryName()
+        binding.recyclerView.layoutManager = LinearLayoutManager(this)
+        binding.recyclerView.adapter = CustomAdapter(listOf()) {
+            goToDetails(it)
+        }
         makeRequest()
     }
 
+    private fun showDatas(category: Category) {}
     private fun makeRequest() {
         val params = JSONObject()
         params.put(NetworkConstants.idShopKey, 1)
@@ -46,6 +52,10 @@ class MenuListActivity : AppCompatActivity() {
             { result ->
                 Log.d("request", result.toString(2))
                 parseData(result.toString())
+                val dataFromJSON = GsonBuilder().create().fromJson(result.toString(), MenuResult::class.java)
+                val categoryFiltered = dataFromJSON.data.firstOrNull() { it.name == categoryFilterKey() }
+                adapter=binding.recyclerView.adapter as CustomAdapter
+                adapter.updateData(categoryFiltered)
             },
             { error ->
                 Log.e("request", error.toString())
@@ -81,6 +91,12 @@ class MenuListActivity : AppCompatActivity() {
             Category.MAIN -> "Plats"
             Category.DESSERT -> "Desserts"
 }
+    }
+    private fun goToDetails(plate: Plate)
+    {
+        val intent = Intent(this, DetailsActivity::class.java)
+        intent.putExtra("plate",plate)
+        startActivity(intent)
     }
     override fun onStart() {
         super.onStart()

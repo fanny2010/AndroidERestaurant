@@ -1,5 +1,7 @@
 package com.example.androiderestaurant.network
 
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 class NetworkConstants {
     companion object {
         val url = "http://test.api.catering.bluecodegames.com/menu"
